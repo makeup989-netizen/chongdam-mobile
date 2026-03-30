@@ -1,0 +1,24 @@
+{
+  "name": "청담대교 디지털 트윈",
+  "short_name": "청담대교",
+  "description": "청담대교 계측 센서 실시간 모니터링",
+  "start_url": "./chongdam_digital_twin.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#080C14",
+  "theme_color": "#00E5CC",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

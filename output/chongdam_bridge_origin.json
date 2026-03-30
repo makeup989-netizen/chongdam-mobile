@@ -1,0 +1,24 @@
+{
+  "description": "청담대교 IFC 좌표 원점 정보 — 센서 위치 매핑용",
+  "site_world_coords": {
+    "x_easting_m": 205797.5815499112,
+    "y_northing_m": 547761.6921646645,
+    "z_elevation_m": 0.0
+  },
+  "rotation": {
+    "angle_deg": -110.0,
+    "angle_rad": -1.9198621771937625,
+    "note": "교량 종방향이 X축과 이루는 각도 (반시계 양수)"
+  },
+  "elevation": {
+    "base_m": 104.2,
+    "note": "기준고 (기초 최저점)"
+  },
+  "gltf_transform": {
+    "note": "--center-model 옵션 사용 시 모델 AABB 중심이 (0,0,0)으로 이동",
+    "apply_in_threejs": "loader.load('chongdam_bridge.glb', gltf => {\n  const model = gltf.scene;\n  // center-model 적용됨 → 추가 오프셋 불필요\n  // 필요시 스케일 조정: model.scale.setScalar(1.0);\n  scene.add(model);\n});"
+  },
+  "sensor_coord_mapping": {
+    "note": "센서 실세계 좌표(WGS84 또는 평면좌표) → 모델 로컬 좌표 변환:\n  1. 실세계 좌표에서 사이트 원점 빼기\n  2. 회전각 -110° 적용 (역변환)\n  3. Z 기준고 보정 (base_elevation 빼기)\n  → ifc_sensor_mapper.js의 worldToModel() 함수 사용"
+  }
+}
